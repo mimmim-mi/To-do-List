@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng To-Do List</title>
+    <head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng To-Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
+</head>
+</head>
+
+<body>
+    <!-- Notification -->
+    <div id="notification" class="hidden"></div>
+
+    <div class="bd">
+        <div class="chil">
+            <!-- Bảng danh sách -->
+            <table class="table-task">
+                <thead>
+                    <tr>
+                        <th>Công việc</th>
+                        <th>Deadline</th>
+                        <th>Ưu tiên</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="task-list"></tbody>
+            </table>
+
+            <!-- JS -->
+            <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+            <script src="https://npmcdn.com/flatpickr/dist/l10n/vn.js"></script>
+
+            <script src="utils.js"></script>
+            <script src="storage.js"></script>
+            <script src="app.js"></script>
+        </div>
+
+        <div class="chil-form">
+            <!-- Form thêm công việc -->
+            <h1>Daily Planner</h1>
+
+            <div class="task-form" style="background-color: white;">
+                <label for="task-title">Nội dung:</label>
+                <input type="text" id="task-title" placeholder="Nhập công việc...">
+
+                <label for="task-deadline">Deadline:</label>
+                <input type="datetime-local" id="task-deadline">
+
+                <label for="task-priority">Độ ưu tiên:</label>
+                <select id="task-priority">
+                    <option value="Low">Thấp</option>
+                    <option value="Medium" selected>Vừa</option>
+                    <option value="High">Cao</option>
+                </select>
+                <button id="add-task-btn">Thêm công việc</button>
+            </div>
+
+            <!-- Bộ lọc -->
+            <div class="task-filters" style="background-color: white;">
+                <label for="filter-status">Trạng thái:</label>
+                <select id="filter-status">
+                    <option value="all" selected>Tất cả</option>
+                    <option value="done">Đã làm</option>
+                    <option value="undone">Chưa làm</option>
+                </select>
+
+                <label for="filter-priority">Ưu tiên:</label>
+                <select id="filter-priority">
+                    <option value="all" selected>Tất cả</option>
+                    <option value="Low">Thấp</option>
+                    <option value="Medium">Vừa</option>
+                    <option value="High">Cao</option>
+                </select>
+
+                <label for="filter-date">Ngày:</label>
+                <input type="date" id="filter-date">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

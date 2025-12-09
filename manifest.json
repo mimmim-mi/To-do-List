@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Daily Planner",
+  "version": "1.0",
+  "description": "To-Do List dùng localStorage",
+  
+  "action": {},
+
+  "background": {
+    "service_worker": "bg.js"
+  },
+
+  "permissions": ["storage", "tabs"]
+}

@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playwrite+CU:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    line-height: 1.5;
+    background-image: url("./bg-com/body-image.jpg")
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: auto;
+    height: 60px;
+    background-image: url("./bg-com/title-style.jpg");
+    background-size: cover;
+}
+
+.bd {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    box-shadow: black;
+    font-family: sans-serif;
+    margin: 0; 
+    line-height: 1.5;
+    background-color: #ffffffbe;
+}
+
+.chil-form {
+    flex: 1;             
+    max-width: 400px;    
+    top: 0;
+    z-index: 999;
+    padding: 1rem;
+    margin: 0;           
+    width: auto;         
+}
+
+.chil {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    flex: 2;             
+    max-width: 800px;
+    background-color: #ffffff;
+    padding: 1rem;
+    position: relative;
+    margin: 0;          
+    width: auto;         
+}
+
+.task-form,
+.task-filters {
+    display: flex;
+    flex-wrap: wrap;      
+    gap: 1rem;
+    align-items: center;
+    background: white;
+    border: 2px dashed #141535;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+input, select {
+    margin-right: 20px;
+    padding: 5px;
+}
+
+input {
+    width: 200px;            
+    padding: 10px 15px;      
+    font-size: 16px;         
+    border: 2px solid #ccc;  
+    border-radius: 5px;      
+    outline: none;            
+    transition: border-color 0.3s, box-shadow 0.3s; 
+}
+
+input:focus {
+    border-color: #141535; 
+    box-shadow: 0 0 5px #141535; 
+    color: #ccc;
+}
+
+button {
+    background-color: #141535; 
+    color: #ccc; 
+    font-weight: bold;  
+    padding: 10px 20px; 
+    border: none;       
+    border-radius: 5px;    
+    cursor: pointer;      
+    transition: background-color 0.3s, transform 0.2s; 
+}
+
+
+button:hover {
+    background-color: #ccc; 
+    transform: scale(1.05); 
+    color: #141535;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+    border-color: #141535;
+}
+.done {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* Tùy chỉnh chung cho các input/select */
+.task-form input[type="text"],
+.task-form select,
+/* Áp dụng cho cả input deadline */
+#task-deadline {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Tùy chỉnh cho input lọc ngày */
+#filter-date {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    /* Các thuộc tính khác nếu cần */
+}
