@@ -10,6 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterDate = document.getElementById('filter-date');
 
     const taskList = document.getElementById('task-list');
+    const btnAdd = document.getElementById("toggle-add");
+    const btnFilter = document.getElementById("toggle-filter");
+    const formAdd = document.querySelector(".task-form");
+    const formFilter = document.querySelector(".task-filters");
+
+    btnAdd.onclick = () => {
+        formAdd.classList.toggle("hidden");
+        formFilter.classList.add("hidden");
+    };
+
+    btnFilter.onclick = () => {
+        formFilter.classList.toggle("hidden");
+        formAdd.classList.add("hidden");
+    };
 
     if ("Notification" in window && Notification.permission !== "granted" && Notification.permission !== "denied") {
         Notification.requestPermission();
@@ -113,3 +127,5 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!task.done) notifyBeforeDeadline(task);
     });
 });
+
+

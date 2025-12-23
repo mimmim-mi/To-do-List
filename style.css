@@ -4,7 +4,7 @@ body {
     font-family: sans-serif;
     margin: 20px;
     line-height: 1.5;
-    background-image: url("./bg-com/body-image.jpg")
+    background-image: url("./bg-com/Background\ branco\ orgânico\ _\ Vetor\ Grátis.jfif")
 }
 
 h1 {
@@ -17,7 +17,8 @@ h1 {
     text-align: center;
     width: auto;
     height: 60px;
-    background-image: url("./bg-com/title-style.jpg");
+    background-color: #464646;
+    border-radius: 5px;
     background-size: cover;
 }
 
@@ -66,7 +67,6 @@ h1 {
     gap: 1rem;
     align-items: center;
     background: white;
-    border: 2px dashed #141535;
     padding: 1rem;
     border-radius: 10px;
     margin-bottom: 1rem;
@@ -92,13 +92,13 @@ input {
 }
 
 input:focus {
-    border-color: #141535; 
-    box-shadow: 0 0 5px #141535; 
+    border-color: #464646; 
+    box-shadow: 0 0 5px #464646; 
     color: #ccc;
 }
 
 button {
-    background-color: #141535; 
+    background-color: #464646; 
     color: #ccc; 
     font-weight: bold;  
     padding: 10px 20px; 
@@ -112,7 +112,7 @@ button {
 button:hover {
     background-color: #ccc; 
     transform: scale(1.05); 
-    color: #141535;
+    color: #464646;
 }
 table {
     width: 100%;
@@ -122,7 +122,8 @@ th, td {
     padding: 8px;
     border: 1px solid #ccc;
     text-align: left;
-    border-color: #141535;
+    border-color: #00000065;
+    color: #464646
 }
 .done {
     text-decoration: line-through;
@@ -149,5 +150,37 @@ th, td {
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 16px;
-    /* Các thuộc tính khác nếu cần */
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 10px;
+    background: #585858;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.action-btn i {
+    margin-right: 6px;
+}
+
+.hidden {
+    display: none;
+}
+
+.task-form,
+.task-filters {
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 12px;
 }

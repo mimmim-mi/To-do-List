@@ -44,46 +44,59 @@
         </div>
 
         <div class="chil-form">
-            <!-- Form thêm công việc -->
-            <h1>Daily Planner</h1>
+            <h1>To-Do List</h1>
 
-            <div class="task-form" style="background-color: white;">
-                <label for="task-title">Nội dung:</label>
+            <!-- Hàng nút -->
+            <div class="action-buttons">
+                <button id="toggle-add" class="action-btn">
+                    <i class="fa fa-plus"></i> Thêm công việc
+                </button>
+
+                <button id="toggle-filter" class="action-btn">
+                    <i class="fa fa-filter"></i> Bộ lọc
+                </button>
+            </div>
+
+            <!-- Form thêm công việc -->
+            <div class="task-form hidden">
+                <label>Nội dung:</label>
                 <input type="text" id="task-title" placeholder="Nhập công việc...">
 
-                <label for="task-deadline">Deadline:</label>
+                <label>Deadline:</label>
                 <input type="datetime-local" id="task-deadline">
 
-                <label for="task-priority">Độ ưu tiên:</label>
+                <label>Độ ưu tiên:</label>
                 <select id="task-priority">
                     <option value="Low">Thấp</option>
                     <option value="Medium" selected>Vừa</option>
                     <option value="High">Cao</option>
                 </select>
+
                 <button id="add-task-btn">Thêm công việc</button>
             </div>
 
             <!-- Bộ lọc -->
-            <div class="task-filters" style="background-color: white;">
-                <label for="filter-status">Trạng thái:</label>
+            <div class="task-filters hidden">
+                <label>Trạng thái:</label>
                 <select id="filter-status">
-                    <option value="all" selected>Tất cả</option>
+                    <option value="all">Tất cả</option>
                     <option value="done">Đã làm</option>
                     <option value="undone">Chưa làm</option>
                 </select>
 
-                <label for="filter-priority">Ưu tiên:</label>
+                <label>Ưu tiên:</label>
                 <select id="filter-priority">
-                    <option value="all" selected>Tất cả</option>
+                    <option value="all">Tất cả</option>
                     <option value="Low">Thấp</option>
                     <option value="Medium">Vừa</option>
                     <option value="High">Cao</option>
                 </select>
 
-                <label for="filter-date">Ngày:</label>
+                <label>Ngày:</label>
                 <input type="date" id="filter-date">
             </div>
         </div>
+
     </div>
 </body>
 
