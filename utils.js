@@ -14,7 +14,7 @@ function filterByDate(tasks, selectedDate) {
     if (!selectedDate) return tasks;
 
     return tasks.filter(t => {
-        const taskDate = t.deadline.split("T")[0];  
+        const taskDate = t.deadline.split("T")[0];
         return taskDate === selectedDate;
     });
 }

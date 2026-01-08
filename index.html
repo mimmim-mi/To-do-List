@@ -4,14 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Ứng dụng To-Do List</title>
-    <head>
-    <meta charset="UTF-8">
-    <title>Ứng dụng To-Do List</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
-</head>
 </head>
 
 <body>
@@ -20,19 +16,8 @@
 
     <div class="bd">
         <div class="chil">
-            <!-- Bảng danh sách -->
-            <table class="table-task">
-                <thead>
-                    <tr>
-                        <th>Công việc</th>
-                        <th>Deadline</th>
-                        <th>Ưu tiên</th>
-                        <th>Trạng thái</th>
-                        <th>Hành động</th>
-                    </tr>
-                </thead>
-                <tbody id="task-list"></tbody>
-            </table>
+            <!-- Danh sách dạng card/grid -->
+            <div class="task-grid" id="task-list"></div>
 
             <!-- JS -->
             <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>

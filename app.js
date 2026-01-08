@@ -37,33 +37,44 @@ document.addEventListener('DOMContentLoaded', () => {
         tasks = filterByDate(tasks, filterDate.value);
 
         taskList.innerHTML = '';
+
         tasks.forEach(task => {
-            const tr = document.createElement('tr');
-            tr.dataset.id = task.id;
-            if (task.done) tr.classList.add('done');
+            const card = document.createElement('div');
+            card.className = 'task-card';
+            card.dataset.id = task.id;
+            if (task.done) card.classList.add('done');
 
             const deadlineText = new Date(task.deadline).toLocaleString();
 
-            tr.innerHTML = `
-                <td>${task.title}</td>
-                <td>${deadlineText}</td>
-                <td>${task.priority}</td>
-                <td>${task.done ? "Đã làm" : "Chưa làm"}</td>
-                <td>
-                    <i class="fas ${task.done ? 'fa-undo' : 'fa-check'} toggle-btn" title="${task.done ? 'Chưa làm' : 'Hoàn thành'}"></i>
+            card.innerHTML = `
+                <div class="task-title">${task.title}</div>
+
+                <div class="task-deadline">${deadlineText}</div>
+
+                <div class="task-badges">
+                    <span class="badge ${task.priority.toLowerCase()}">${task.priority}</span>
+                    <span class="badge ${task.done ? 'done' : 'undone'}">
+                        ${task.done ? 'Đã làm' : 'Chưa làm'}
+                    </span>
+                </div>
+
+                <div class="task-actions">
+                    <i class="fas ${task.done ? 'fa-undo' : 'fa-check'} toggle-btn"
+                        title="${task.done ? 'Chưa làm' : 'Hoàn thành'}"></i>
                     <i class="fas fa-pencil-alt edit-btn" title="Sửa"></i>
                     <i class="fas fa-trash delete-btn" title="Xóa"></i>
-                </td>
+                </div>
             `;
-            taskList.appendChild(tr);
 
-            tr.querySelector('.toggle-btn').addEventListener('click', () => {
+            taskList.appendChild(card);
+
+            card.querySelector('.toggle-btn').addEventListener('click', () => {
                 task.done = !task.done;
                 updateTask(task);
                 renderTasks();
             });
 
-            tr.querySelector('.edit-btn').addEventListener('click', () => {
+            card.querySelector('.edit-btn').addEventListener('click', () => {
                 editTaskId = task.id;
                 titleInput.value = task.title;
                 deadlineInput.value = task.deadline;
@@ -71,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 addBtn.textContent = "Cập nhật";
             });
 
-            tr.querySelector('.delete-btn').addEventListener('click', () => {
+            card.querySelector('.delete-btn').addEventListener('click', () => {
                 removeTask(task.id);
                 renderTasks();
             });
@@ -99,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             editTaskId = null;
             addBtn.textContent = "Thêm công việc";
-
         } else {
             const newTask = {
                 id: Date.now(),
@@ -127,5 +137,3 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!task.done) notifyBeforeDeadline(task);
     });
 });
-
-
